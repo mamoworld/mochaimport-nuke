@@ -1,0 +1,22 @@
+how to install MochaImport+ for Nuke
+
+1) copy this entire folder somewhere on your harddrive
+2) make sure the folder is included in your NUKE_PATH environment variable
+
+Instead of adding the folder to your NUKE_PATH, you can also add it to the plugin path in
+~/.nuke/init.py
+
+---------------------------------------------------
+Example to change init.py on MacOS
+Assume you are user JOHN with home directory /Users/JOHN/
+and MochaImport+ is located at /Users/JOHN/myTools/mochaImportPlus
+Then
+1) go to the folder /Users/JOHN/.nuke
+2) create the file init.py in this folder if it does not exist yet
+3) add the following line to init.py:
+nuke.pluginAddPath('/Users/JOHN/myTools/mochaImportPlus');
+
+If you now start nuke, MochaImport+ should be installed.
+
+For more details see
+http://docs.thefoundry.co.uk/nuke/63/pythondevguide/installing_plugins.html
