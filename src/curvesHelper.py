@@ -1,21 +1,22 @@
 import nuke
-import nuke.rotopaint as rp
+
 
 def getLayersAsList(curves):
-    return getLayersAsListHelper(curves.rootLayer,[curves.rootLayer])
+    return getLayersAsListHelper(curves.rootLayer, [curves.rootLayer])
 
-def getLayersAsListHelper(layer, list):
+
+def getLayersAsListHelper(layer, _list):
     for i in layer:
-        x = i.getAttributes()  
+        x = i.getAttributes()
         if isinstance(i, nuke.rotopaint.Shape):
-            list.append(i)
+            _list.append(i)
         if isinstance(i, nuke.rotopaint.Stroke):
-            list.append(i) 
+            _list.append(i)
         if isinstance(i, nuke.rotopaint.Layer):
-            list.append(i)
-            getLayersAsListHelper(i, list)
-    return list
+            _list.append(i)
+            getLayersAsListHelper(i, _list)
+    return _list
 
 
 def layerListToLayerNameList(layerList):
-    return map(lambda x: x.name,layerList)
+    return list(map(lambda x: x.name, layerList))

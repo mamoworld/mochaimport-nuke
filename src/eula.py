@@ -1,17 +1,21 @@
 # USAGE
 #
-#if eula.acceptEulaDialog():
+# if eula.acceptEulaDialog():
 #    print("accepted")
-#else:
+# else:
 #    print("rejected")
 
 
 try:
     from PySide import QtGui
+
     myQtModule = QtGui
 except:
     from PySide2 import QtWidgets
+
     myQtModule = QtWidgets
+
+
 def acceptEulaDialog():
     return EulaDialog().exec_()
 
@@ -24,16 +28,16 @@ class EulaDialog(myQtModule.QDialog):
         self.initUI()
 
     def initUI(self):
-
-        licenseTextBox =  myQtModule.QHBoxLayout()
-        licenseInfoText = myQtModule.QTextEdit(self.eulaText,self)
+        licenseTextBox = myQtModule.QHBoxLayout()
+        licenseInfoText = myQtModule.QTextEdit(self.eulaText, self)
         licenseInfoText.setReadOnly(True)
         licenseTextBox.addWidget(licenseInfoText)
 
         infoTextBox = myQtModule.QHBoxLayout()
-        infoText = myQtModule.QLabel("If you agree to the above terms press 'I Accept'. Otherwise press 'Cancel' to cancel installation of the license.")
+        infoText = myQtModule.QLabel(
+            "If you agree to the above terms press 'I Accept'. "
+            "Otherwise press 'Cancel' to cancel installation of the license.")
         infoTextBox.addWidget(infoText)
-
 
         buttonsBox = myQtModule.QHBoxLayout()
         acceptButton = myQtModule.QPushButton("I Accept", self)
@@ -42,7 +46,6 @@ class EulaDialog(myQtModule.QDialog):
         cancelButton.setAutoDefault(False)
         buttonsBox.addWidget(acceptButton)
         buttonsBox.addWidget(cancelButton)
-
 
         mainBox = myQtModule.QVBoxLayout()
         mainBox.addLayout(licenseTextBox)
@@ -53,7 +56,7 @@ class EulaDialog(myQtModule.QDialog):
         acceptButton.clicked.connect(self.accept)
         cancelButton.clicked.connect(self.reject)
 
-        #self.setGeometry(300, 300, 250, 150)
+        # self.setGeometry(300, 300, 250, 150)
         self.setLayout(mainBox)
 
         self.setWindowTitle("End User License Agreement (EULA)")

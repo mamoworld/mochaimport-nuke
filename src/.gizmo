@@ -4,8 +4,8 @@ Gizmo {
  inputs 2
  addUserKnob {20 User l "Stabilized View"}
  addUserKnob {26 loadMochaDataLabel l "load mocha data" t "load Nuke Corner Pin (*.nk) data from mocha" T ""}
- addUserKnob {22 loadCornerPinFile l "from File" t "load the corner pin data from a mocha Nuke corner pin (*.nk) file" -STARTLINE T "import mochaimport\nmochaimport.cornerPinNode___loadTrackingDataFromFile()"}
- addUserKnob {22 pasteCornerPinDataFromClipboard l "from Clipboard" t "paste mocha's NUKE Corner Pin (*.nk) data from the clipboard" -STARTLINE T "import mochaimport\nmochaimport.cornerPinNode___loadTrackinDataFromClipboard()"}
+ addUserKnob {22 loadCornerPinFile l "from File" t "load the corner pin data from a mocha Nuke corner pin (*.nk) file" -STARTLINE T "import mochaimport\nmochaimport.cornerPinNode.loadTrackingDataFromFile()"}
+ addUserKnob {22 pasteCornerPinDataFromClipboard l "from Clipboard" t "paste mocha's NUKE Corner Pin (*.nk) data from the clipboard" -STARTLINE T "import mochaimport\nmochaimport.cornerPinNode.loadTrackinDataFromClipboard()"}
  addUserKnob {20 cornerpindata l data n 1}
  addUserKnob {12 pin1 l "pin 1"}
  addUserKnob {12 pin2 l "pin 2"}
