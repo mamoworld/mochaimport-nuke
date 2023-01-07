@@ -1,11 +1,11 @@
 # to apply any of the help texts, copy and paste the respective code
 # to the NUKE script editor, select the node and run the script
+import nuke
 
-
-################################# START STABILIZED GIZMO HELP
+# START STABILIZED GIZMO HELP
 
 n = nuke.selectedNode()
-print n
+print(n)
 n['help'].setValue("""
 <h1>Creates a stabilized view</h1>
 <p>Transforms an input image such that only the region of the corner pin track is shown as stabilized view.</p>
@@ -19,7 +19,7 @@ n['help'].setValue("""
 
 <h2>Basic Usage of Stabilized View Rig</h2>
 <ol>
-<li>From the MochaImport+ menu, create the stabilized view rig consisting of the StartStabilized node, the EndStabilized node, and the Stabilized View Backdrop.</li>
+<li>From the MochaImportPlus menu, create the stabilized view rig consisting of the StartStabilized node, the EndStabilized node, and the Stabilized View Backdrop.</li>
 <li>Load your mocha tracking data in the StartStabilized node.
 <li>Do arbitrary manipulations in the Stabilized View by inserting new nodes inside the backdrop. All changes you do there in a stabilized setting will also be visible in your original perspective after the EndStabilized node.</li>
 </ol>
@@ -32,10 +32,10 @@ n['help'].setValue("""
 <li>as DistMap input of the EndStabilized node use a Distortion Map Clip (ST Map) exported with the mocha Pro lens module with option 'distort'.</li>
 </ul>""".replace('\n', '').replace('\r', ''))
 
-################################# END STABILIZED GIZMO HELP
+# END STABILIZED GIZMO HELP
 
 n = nuke.selectedNode()
-print n
+print(n)
 n['help'].setValue("""
 <h1>Go back from a stabilized view to the original perspective</h1>
 <p>Undoes the stabilization of a stabilized view by reintroducing the movement of the original perspective.</p> 
@@ -49,7 +49,7 @@ n['help'].setValue("""
 
 <h2>Basic Usage of Stabilized View Rig</h2>
 <ol>
-<li>From the MochaImport+ menu, create the stabilized view rig consisting of the StartStabilized node, the EndStabilized node, and the Stabilized View Backdrop.</li>
+<li>From the MochaImportPlus menu, create the stabilized view rig consisting of the StartStabilized node, the EndStabilized node, and the Stabilized View Backdrop.</li>
 <li>Load your mocha tracking data in the StartStabilized node.
 <li>Do arbitrary manipulations in the Stabilized View by inserting new nodes inside teh backdrop. All changes you do there in a stabilized setting will also be visible in your original perspective after the EndStabilized node.</li>
 </ol>
@@ -62,10 +62,10 @@ n['help'].setValue("""
 <li>as DistMap input of the EndStabilized node use a Distortion Map Clip (ST Map) exported with the mocha Pro lens module with option 'distort'.</li>
 </ul>""".replace('\n', '').replace('\r', ''))
 
-################################# CORNER PIN W LENS DIST HELP
+# CORNER PIN W LENS DIST HELP
 
 n = nuke.selectedNode()
-print n
+print(n)
 n['help'].setValue("""
 <h1>Corner Pin With Lens Distortion</h1>
 <p>Creates a corner pin based on mocha tracking data and optionally also mocha lens data</p> 
